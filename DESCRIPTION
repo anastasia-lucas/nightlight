@@ -1,0 +1,8 @@
+Package: nightlight
+Title: An 'omic Interaction Heatmap Package
+Version: 0.0.0.9000
+Authors@R: person("Anastasia", "Lucas", email = "anastasia.lucas@pennmedicine.upenn.edu", role = c("aut", "cre"))
+Description: This packages creates heatmaps for results of SNP-SNP, SNP-Environment, and Environment-Environment interactions studies. It is designed to improve upon traditional heatmaps by incorporating meta information in a way that is both useful for interpretation and aesthetically pleasing.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
