@@ -7,7 +7,7 @@
 agxgman(d, me, symmetric = TRUE, highlight_p = 0.05, legend = "p-value",
   title = NULL, high = "#02021e", low = "blue",
   highlight_high = "yellow", highlight_low = "#fffcd3", file = "agxgman",
-  ext = "gif", hgt = 7, wi = 7.5, res = 300)
+  ext = "gif", hgt = 600, wi = 650)
 }
 \arguments{
 \item{d}{data frame, must contain SNP1, CHR1, POS1, SNP2, CHR2, POS2, pvalue, Frame (factor) columns}
@@ -34,9 +34,9 @@ agxgman(d, me, symmetric = TRUE, highlight_p = 0.05, legend = "p-value",
 
 \item{ext}{file extension "html" or "gif"}
 
-\item{hgt}{height of plot in inches}
+\item{hgt}{height of plot in pixels}
 
-\item{wi}{width of plot in inches}
+\item{wi}{width of plot in pixels}
 }
 \value{
 html or gif file

@@ -14,14 +14,14 @@
 #' @param highlight_low if highlight_p given, color for min of highlight range
 #' @param file file name of saved image
 #' @param ext file extension "html" or "gif"
-#' @param hgt height of plot in inches
-#' @param wi width of plot in inches
+#' @param hgt height of plot in pixels
+#' @param wi width of plot in pixels
 #' @return html or gif file
 #' @export
 #' @examples
 #' agxgman(d, me, symmetric, highlight_p, legend, title, high, low, highlight_high, highlight_low, file, hgt, wi)
 
-agxgman <- function(d, me, symmetric=TRUE, highlight_p=0.05, legend="p-value", title=NULL, high="#02021e", low="blue", highlight_high="yellow", highlight_low="#fffcd3", file="agxgman", ext="gif", hgt=7, wi=7.5, res=300){
+agxgman <- function(d, me, symmetric=TRUE, highlight_p=0.05, legend="p-value", title=NULL, high="#02021e", low="blue", highlight_high="yellow", highlight_low="#fffcd3", file="agxgman", ext="gif", hgt=600, wi=650){
   if (!requireNamespace(c("ggplot2"), quietly = TRUE)==TRUE|!requireNamespace(c("gganimate"), quietly = TRUE)==TRUE) {
     stop("Please install ggplot2 and ggiraph to create interactive visualization.", call. = FALSE)
   } else {
@@ -175,7 +175,7 @@ agxgman <- function(d, me, symmetric=TRUE, highlight_p=0.05, legend="p-value", t
   #Animate and save
   print(paste("Saving plot to ", file, ".", ext, sep=""))
   ap <- gganimate(p)
-  gganimate_save(ap, filename=paste(file, ".", ext, sep=""))
+  gganimate_save(ap, filename=paste(file, ".", ext, sep=""), ani.height=hgt, ani.width=wi)
   return(ap)
 
 }
