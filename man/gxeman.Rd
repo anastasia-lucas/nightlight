@@ -5,7 +5,7 @@
 \title{gxeman}
 \usage{
 gxeman(d, snpme, envme, highlight_p = 0.05, legend = "p-value",
-  title = NULL, high = "#02021e", low = "blue",
+  title = NULL, high = "#02021e", low = "#1A0F99",
   highlight_high = "yellow", highlight_low = "#fffcd3", file = "gxgman",
   hgt = 7, wi = 7.5, res = 300)
 }

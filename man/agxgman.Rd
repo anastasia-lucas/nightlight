@@ -5,7 +5,7 @@
 \title{agxgman}
 \usage{
 agxgman(d, me, symmetric = TRUE, highlight_p = 0.05, legend = "p-value",
-  title = NULL, high = "#02021e", low = "blue",
+  title = NULL, high = "#02021e", low = "#1A0F99",
   highlight_high = "yellow", highlight_low = "#fffcd3", file = "agxgman",
   ext = "gif", hgt = 600, wi = 650)
 }

@@ -21,7 +21,7 @@
 #' @examples
 #' gxeman(d, me, symmetric, highlight_p, legend, title, high, low, highlight_high, highlight_low, file, hgt, wi, res)
 
-gxeman <- function(d, snpme, envme, highlight_p=0.05, legend="p-value", title=NULL, high="#02021e", low="blue", highlight_high="yellow", highlight_low="#fffcd3", file="gxgman", hgt=7, wi=7.5, res=300){
+gxeman <- function(d, snpme, envme, highlight_p=0.05, legend="p-value", title=NULL, high="#02021e", low="#1A0F99", highlight_high="yellow", highlight_low="#fffcd3", file="gxgman", hgt=7, wi=7.5, res=300){
   if (!requireNamespace(c("ggplot2"), quietly = TRUE)==TRUE) {
     stop("Please install ggplot2 and ggiraph to create interactive visualization.", call. = FALSE)
   } else {
@@ -119,7 +119,7 @@ gxeman <- function(d, snpme, envme, highlight_p=0.05, legend="p-value", title=NU
       }
     }
     #Fix guides
-    p <- p + scale_color_gradientn(colours=color_vector, values=value_vector, guide = FALSE)
+    p <- p + scale_color_gradientn(colours=color_vector, values=value_vector, name=legend,limits=c(0,1),breaks=breaks_vector, labels=label_vector, FALSE)
     p <- p + guides(fill = guide_legend(override.aes = list(shape = NA)))
   }
   #Add colorbar or legend

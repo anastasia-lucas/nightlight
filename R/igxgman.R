@@ -22,7 +22,7 @@
 #' @examples
 #' igxgman(d, me, symmetric, highlight_p, legend, title, high, low, highlight_high, highlight_low, file, hgt, wi)
 
-igxgman <- function(d, me, symmetric=TRUE, highlight_p=0.05, legend="p-value", title=NULL, high="#02021e", low="blue", highlight_high="yellow", highlight_low="#fffcd3", dbSNP, moreinfo=FALSE, file="igxgman", hgt=7, wi=7.5, res=300){
+igxgman <- function(d, me, symmetric=TRUE, highlight_p=0.05, legend="p-value", title=NULL, high="#02021e", low="#1A0F99", highlight_high="yellow", highlight_low="#fffcd3", dbSNP, moreinfo=FALSE, file="igxgman", hgt=7, wi=7.5, res=300){
   if (!requireNamespace(c("ggplot2"), quietly = TRUE)==TRUE) {
     stop("Please install ggplot2 and ggiraph to create interactive visualization.", call. = FALSE)
   } else {
@@ -179,7 +179,7 @@ igxgman <- function(d, me, symmetric=TRUE, highlight_p=0.05, legend="p-value", t
     } else {
       p <- p + geom_point_interactive(data=xme, aes(x=pos_index1, y= -1, color=pvalue, onclick=onclick)) + expand_limits(y=-2) + geom_point_interactive(data=yme, aes(x=-1, y=pos_index2, color=pvalue, onclick=onclick)) + expand_limits(x=-2)
     }
-    p <- p + scale_color_gradientn(colours=color_vector, values=value_vector, guide = FALSE)
+    p <- p + scale_color_gradientn(colours=color_vector, values=value_vector, name=legend,limits=c(0,1),breaks=breaks_vector, labels=label_vector, guide=FALSE)
     p <- p + guides(fill = guide_legend(override.aes = list(shape = NA)))
   }
 
